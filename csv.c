@@ -10,10 +10,10 @@ int read_row(FILE *file, Row *row)
 
         /* sscanf découpe la ligne et range chaque colonne dans row.
            Il renvoie le nombre de colonnes qu'il a réussi à lire. */
-        int nb = sscanf(line, "%d;%d;%15[^;];%d;%d;%d;%d;%d;%d",
-                        &row->year, &row->collision_id, row->vehicle_id,
-                        &row->location, &row->user_type, &row->severity,
-                        &row->gender, &row->birth_year, &row->purpose);
+        int nb = sscanf(line, "%hd;%u;%15[^;];%hhd;%hhd;%hhd;%hhd;%hd;%hhd",
+                &row->year, &row->collision_id, row->vehicle_id,
+                &row->location, &row->user_type, &row->severity,
+                &row->gender, &row->birth_year, &row->purpose);
 
         /* Les 9 colonnes ont été lues : la ligne est bonne */
         if (nb == 9) {
