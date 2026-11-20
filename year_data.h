@@ -17,6 +17,8 @@ typedef struct {
     unsigned int light_injuries;   /* severity == 4 : blessé léger */
 } YearStats;
 
+// met à jour les compteurs de gravité d'une année à partir d'une ligne CSV
+void add_victim(YearStats *stats, const Row *row);
 /* Fonction principale appelée par main.c pour le mode YEAR_DATA */
 void run_year_data(FILE *file);
 
