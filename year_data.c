@@ -1,4 +1,23 @@
 #include"year_data.h"
+void add_victim(YearStats *stats, const Row *row) { // constante (lecture seule pas de modif)
+    switch (row->severity) {
+        case 1:
+            stats->unharmed++;       
+            break;
+        case 2:
+            stats->killed++;        
+            break;
+        case 3:
+            stats->serious_injuries++; 
+            break;
+        case 4:
+            stats->light_injuries++; 
+            break;
+        default:
+            break;
+    }
+}
+
 
 
 
