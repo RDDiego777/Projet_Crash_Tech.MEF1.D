@@ -16,6 +16,8 @@ typedef struct {
     uint32_t light_injuries;   /* severity == 4 : blessé léger */
 } YearStats;
 
+
+
 /* Fonction principale appelée par main.c quand le mode est YEAR_DATA */
 void run_year_data(FILE *file);
 
