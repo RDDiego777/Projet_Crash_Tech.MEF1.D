@@ -3,10 +3,10 @@
 
 #include <stdio.h>
 
-#define NB_COLUMNS 9      /* nombre de colonnes dans le fichier */
-#define LINE_SIZE  256    /* taille max d'une ligne             */
+#define NB_COLUMNS 9      
+#define LINE_SIZE  256    
 
-/* Une ligne du fichier = une victime d'un accident */
+
 typedef struct {
     short year;
     unsigned int collision_id;
@@ -19,8 +19,7 @@ typedef struct {
     signed char purpose;
 } Row;
 
-/* Lit la ligne suivante du fichier et remplit row.
-   Retourne 1 si une ligne a été lue, 0 à la fin du fichier. */
+
 int read_row(FILE *file, Row *row);
 
 #endif
