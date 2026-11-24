@@ -9,14 +9,14 @@
 
 typedef struct {
     short year;
-    unsigned int collision_id;
+    int collision_id;
     char vehicle_id[16];
-    signed char location;
-    signed char user_type;
-    signed char severity;
-    signed char gender;
-    short birth_year;
-    signed char purpose;
+    int location;
+    int user_type;
+    int severity;
+    int gender;
+    int birth_year;
+    int purpose;
 } Row;
 
 
