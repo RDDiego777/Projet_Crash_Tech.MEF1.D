@@ -8,7 +8,7 @@
 
 
 typedef struct {
-    short year;
+    int year;
     int collision_id;
     char vehicle_id[16];
     int location;
