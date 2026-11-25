@@ -1,10 +1,7 @@
 #ifndef CSV_H
 #define CSV_H
 
-#include <stdio.h>
-
-#define NB_COLUMNS 9      
-#define LINE_SIZE  256    
+#include <stdio.h>  
 
 
 typedef struct {
