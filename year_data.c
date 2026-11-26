@@ -22,42 +22,50 @@ void display_year_stats(int year, const YearStats *stats) {
     unsigned int total_victims = stats->unharmed + stats->killed + stats->serious_injuries + stats->light_injuries;
     
     printf("\n=== Statistiques pour l'annee %d ===\n", year);
-    printf("Nombre total d'accidents : %u\n", stats->total_accidents);
-    printf("Nombre total de victimes  : %u\n", total_victims);
-    printf("  - Indemnes       : %u\n", stats->unharmed);
-    printf("  - Tues           : %u\n", stats->killed);
-    printf("  - Blesses graves : %u\n", stats->serious_injuries);
-    printf("  - Blesses legers : %u\n", stats->light_injuries);
+    printf("Nombre total d'accidents : %d\n", stats->total_accidents);
+    printf("Nombre total de victimes  : %d\n", total_victims);
+    printf("  - Indemnes       : %d\n", stats->unharmed);
+    printf("  - Tues           : %d\n", stats->killed);
+    printf("  - Blesses graves : %d\n", stats->serious_injuries);
+    printf("  - Blesses legers : %d\n", stats->light_injuries);
     printf("=====================================\n");
 }
 
 
-
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
 void run_year_data(FILE *file){
 
-  YearStats* years[NB_YEARS-1];
-  for(int i=0; i<NB_YEARS-1; i++){
-    years->total_accidents=0;
-    years->killed=0;
-    years->unharmed=0;
-    years->serious_injuries=0;
-    years->light_injuries=0;
+  YearStats years[NB_YEARS];
+  for(int i=0; i<NB_YEARS; i++){
+    years[i].total_accidents=0;
+    years[i].killed=0;
+    years[i].unharmed=0;
+    years[i].serious_injuries=0;
+    years[i].light_injuries=0;
   }
+
+int chosen_year = -1;
+char c;
+
+    while (chosen_year != 0) {
+        printf("\nEntrez une annee entre %d et %d (ou 0 pour quitter) : ", START_YEAR, END_YEAR);
+
+        if (scanf("%d", &chosen_year) != 1) {
+            printf("Erreur : veuillez entrer un nombre valide.\n");
+            c = getchar();
+            while (c != '\n' && c != EOF) {
+                c = getchar();
+            }
+            chosen_year = -1;
+        }
+        else if (chosen_year == 0) {
+            printf("Fin du mode YEAR_DATA.\n");
+        }
+        else if (chosen_year < START_YEAR || chosen_year > END_YEAR) {
+            printf("Annee invalide. Veuillez hoisir entre %d et %d.\n", START_YEAR, END_YEAR);
+        }
+        else {
+            display_year_stats(chosen_year, &years[chosen_year - START_YEAR]);
+        }
+    }
 
   
