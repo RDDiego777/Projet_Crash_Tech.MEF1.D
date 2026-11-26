@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11 -O2
 TARGET = crashTech
-SRCS = main.c csv_parser.c year_data.c age_data.c crash_data.c
+SRCS = main.c csv.c year_data.c age_data.c crash_data.c avl.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(TARGET)
