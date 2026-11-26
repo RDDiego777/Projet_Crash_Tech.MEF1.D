@@ -11,11 +11,11 @@
 
 //Une case du tableau = les statistiques d'une année (20 octets)
 typedef struct {
-    unsigned int total_accidents;
-    unsigned int unharmed;         //severity == 1 : indemne 
-    unsigned int killed;           // severity == 2 : tué 
-    unsigned int serious_injuries; // severity == 3 : blessé grave 
-    unsigned int light_injuries;   // severity == 4 : blessé léger 
+    int total_accidents;
+    int unharmed;         //severity == 1 : indemne 
+    int killed;           // severity == 2 : tué 
+    int serious_injuries; // severity == 3 : blessé grave 
+    int light_injuries;   // severity == 4 : blessé léger 
 } YearStats;
 
 
