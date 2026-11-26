@@ -18,6 +18,19 @@ void add_victim(YearStats *stats, const Row *row) { // constante (lecture seule 
     }
 }
 
+void display_year_stats(int year, const YearStats *stats) {
+    unsigned int total_victims = stats->unharmed + stats->killed + stats->serious_injuries + stats->light_injuries;
+    
+    printf("\n=== Statistiques pour l'annee %d ===\n", year);
+    printf("Nombre total d'accidents : %u\n", stats->total_accidents);
+    printf("Nombre total de victimes  : %u\n", total_victims);
+    printf("  - Indemnes       : %u\n", stats->unharmed);
+    printf("  - Tues           : %u\n", stats->killed);
+    printf("  - Blesses graves : %u\n", stats->serious_injuries);
+    printf("  - Blesses legers : %u\n", stats->light_injuries);
+    printf("=====================================\n");
+}
+
 
 
 
