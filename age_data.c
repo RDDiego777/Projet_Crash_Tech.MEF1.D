@@ -175,3 +175,26 @@ printf("\n--- Menu AGE_DATA ---\n");
 }
 
 
+int readInt(int min, int max)
+{
+    int value;
+    int ok;
+    int c;
+
+    do {
+        ok = scanf("%d", &value);
+
+        c = getchar();
+        while (c != '\n' && c != EOF) {
+            c = getchar();
+        }
+
+        if (ok != 1 || value < min || value > max) {
+            printf("Saisie invalide, entrez un nombre entre %d et %d : ", min, max);
+            ok = 0;
+        }
+    } while (ok != 1);
+
+    return value;
+}
+
