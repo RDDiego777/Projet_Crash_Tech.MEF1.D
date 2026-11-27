@@ -45,7 +45,10 @@ void run_year_data(FILE *file){
     years[i].light_injuries=0;
   }
     while(read_row(file, row)==1){
-        if(row->years
+        if(row->year>=START_YEAR && row->year<=END_YEAR);{
+            addvictim(years[row->year], row);
+        }
+    }
 int chosen_year = -1;
 char c;
 
