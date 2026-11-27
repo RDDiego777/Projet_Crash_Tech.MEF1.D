@@ -134,7 +134,8 @@ printf("\n--- Menu AGE_DATA ---\n");
         printf("2. Pyramide par type d'usager (Conducteur / Passager / Pieton)\n");
         printf("0. Quitter\n");
         printf("Votre choix : ");
-
+  
+      choice = readInt(0, 2);
       if (scanf("%d", &choice) != 1) {
             printf("Erreur : veuillez entrer un nombre valide.\n");
             c = getchar();
@@ -150,6 +151,9 @@ printf("\n--- Menu AGE_DATA ---\n");
       int filter_type = 0; 
       int filter_gender = 0 ;
       printf("Filtrer par type d'usager ? (0 = Tous, 1 = Conducteur, 2 = Passager, 3 = Pieton) : ");
+      
+            filter_type = readInt(0, 3);
+
             if (scanf("%d", &filter_type) != 1 || filter_type < 0 || filter_type > 3) {
                 filter_type = 0;
                 c = getchar();
@@ -159,6 +163,7 @@ printf("\n--- Menu AGE_DATA ---\n");
             }
 
       printf("Filtrer par genre ? (0 = Tous, 1 = Homme, 2 = Femme) : ");
+            filter_gender = readInt(0, 2);
             if (scanf("%d", &filter_gender) != 1 || filter_gender < 0 || filter_gender > 2) {
                 filter_gender = 0;
                 c = getchar();
