@@ -87,5 +87,52 @@ void run_age_data(FILE *file){
     head = insertAge(head, &row);
   }
 }
-    
+
+int choice = -1 ;
+char c ;
+while (choice!=0) {
+printf("\n--- Menu AGE_DATA ---\n");
+        printf("1. Pyramide par genre (Hommes / Femmes)\n");
+        printf("2. Pyramide par type d'usager (Conducteur / Passager / Pieton)\n");
+        printf("0. Quitter\n");
+        printf("Votre choix : ");
+
+      if (scanf("%d", &choice) != 1) {
+            printf("Erreur : veuillez entrer un nombre valide.\n");
+            c = getchar();
+            while (c != '\n' && c != EOF) {
+                c = getchar();
+            }
+            choice = -1;
+        }
+     else if (choice==0) {
+      printf("Fin du mode AGE_DATA.\n") ;
+    }
+    else if (choice==1 || choice==2) {
+      int filter_type = 0; 
+      int filter_gender = 0 ;
+      printf("Filtrer par type d'usager ? (0 = Tous, 1 = Conducteur, 2 = Passager, 3 = Pieton) : ");
+            if (scanf("%d", &filter_type) != 1 || filter_type < 0 || filter_type > 3) {
+                filter_type = 0;
+                c = getchar();
+                while (c != '\n' && c != EOF) {
+                    c = getchar();
+                }
+            }
+
+      printf("Filtrer par genre ? (0 = Tous, 1 = Homme, 2 = Femme) : ");
+            if (scanf("%d", &filter_gender) != 1 || filter_gender < 0 || filter_gender > 2) {
+                filter_gender = 0;
+                c = getchar();
+                while (c != '\n' && c != EOF) {
+                    c = getchar();
+                }
+            }
+ pyramid()
+}
+        else {
+            printf("Choix invalide.\n");
+        }
+    }
+
 
