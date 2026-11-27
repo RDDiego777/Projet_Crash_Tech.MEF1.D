@@ -20,7 +20,7 @@ int main(){
 
     fgets(header, 200, file);
 
-    run_year_data(file);
+    run_age_data(file);
     
     fclose(file);
     return 0;
