@@ -90,7 +90,7 @@ void pyramid(AgeNode *head, int filter_type, int filter_gender){
   int sum=0;
   AgeNode* current=head;
   while(current!=NULL){
-    sum=sum+get_age_count(current, type, gender);
+    sum=sum+get_age_count(current, filter_type, filter_gender);
     current=current->next;
   }
   if(sum==0){
@@ -103,7 +103,7 @@ void pyramid(AgeNode *head, int filter_type, int filter_gender){
 
     current = head;
     while (current != NULL) {
-        count = get_age_count(current, type, gender);
+        count = get_age_count(current, filter_type, filter_gender);
         percent = count * 100.0 / sum;
 
         printf("%d ans | ", current->age);
