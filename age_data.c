@@ -23,7 +23,7 @@ AgeNode *insertAge(AgeNode *head, const Row *row) {
   }
 
   int age = row->year - row->birth_year;
-    if (age < 0 || age > 120) {
+    if (age < 0 || age > 123) {
         return head;
     }
 
