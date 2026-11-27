@@ -5,7 +5,7 @@
 
 typedef struct AgeStats {
 int age ;
-int counts[4][3] ; // ligne i = usertype (0,1,2,3) et colonne j = gender (0,1,2)
+int tab[4][3] ; // ligne i = usertype (0,1,2,3) et colonne j = gender (0,1,2)
 struct AgeStats* next ;
 }AgeStats ;
 
