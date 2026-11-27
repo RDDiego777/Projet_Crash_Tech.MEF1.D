@@ -10,5 +10,6 @@ struct AgeNode* next ;
 }AgeNode ;
 
 void run_age_data(FILE *file);
+AgeNode *createAge(int age);
 
 #endif
