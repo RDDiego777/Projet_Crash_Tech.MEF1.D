@@ -110,7 +110,7 @@ void pyramid(AgeNode *head, int filter_type, int filter_gender){
         for (int k = 0; k < (int)(percent * 10); k++) {
             printf("#");
         }
-        printf(" %5.2f\n", percent);
+        printf(" | %5.2f %%\n", percent);
 
         current = current->next;
     }
