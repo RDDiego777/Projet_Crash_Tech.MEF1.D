@@ -14,5 +14,6 @@ AgeNode *createAge(int age);
 AgeNode *insertAge(AgeNode *head, const Row *row);
 int get_age_count(const AgeNode *node,int filter_type, int filter_gender);
 void pyramid(AgeNode *head, int filter_type, int filter_gender);
+int readInt(int min, int max);
 
 #endif
