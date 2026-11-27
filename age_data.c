@@ -66,17 +66,3 @@ AgeNode *current = head;
     return head;
 }
 
-
-AgeNode *findAge(AgeNode *head, int age){
-  if(head==NULL){
-    return NULL;
-  }
-  AgeNode* current=head;
-  while(current!=NULL){
-    if(current->age==age){
-      return current;
-    }
-    current = current->next;
-  }
-  return NULL;
-}
