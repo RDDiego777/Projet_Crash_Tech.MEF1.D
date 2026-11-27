@@ -34,6 +34,8 @@ void display_year_stats(int year, const YearStats *stats) {
 
 void run_year_data(FILE *file){
 
+    Row* row;
+
   YearStats years[NB_YEARS];
   for(int i=0; i<NB_YEARS; i++){
     years[i].total_accidents=0;
@@ -42,7 +44,8 @@ void run_year_data(FILE *file){
     years[i].serious_injuries=0;
     years[i].light_injuries=0;
   }
-
+    while(read_row(file, row)==1){
+        if(row->years
 int chosen_year = -1;
 char c;
 
