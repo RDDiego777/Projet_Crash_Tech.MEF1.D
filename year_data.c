@@ -54,7 +54,7 @@ void run_year_data(FILE *file){
     years[i].serious_injuries=0;
     years[i].light_injuries=0;
   }
-    while(read_row(file, row)==1){
+    while(read_row(file, &row)==1){
         if(row.year>=START_YEAR && row.year<=END_YEAR){
             add_victim(&years[row.year - START_YEAR], &row);
             add_accident(&years[row.year - START_YEAR], &row, &last_year, &last_collision_id);
@@ -84,5 +84,6 @@ char c;
             display_year_stats(chosen_year, &years[chosen_year - START_YEAR]);
         }
     }
+}
 
   
