@@ -1,7 +1,7 @@
 #include"age_data.h"
 
 AgeNode *createAge(int age) {
-  AgeNode* new =malloc(sizeof(AgeStats)) ;
+  AgeNode* new =malloc(sizeof(AgeNode)) ;
   if (new==NULL) {
   printf("Erreur d'allocation de mémoire.\n");
   exit(1) ;
