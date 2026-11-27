@@ -166,11 +166,12 @@ printf("\n--- Menu AGE_DATA ---\n");
                     c = getchar();
                 }
             }
- pyramid(head, filter_type, filter_gender)
-}
+     pyramid(head, filter_type, filter_gender)
+    }
         else {
             printf("Choix invalide.\n");
         }
-    }
+  }
+}
 
 
