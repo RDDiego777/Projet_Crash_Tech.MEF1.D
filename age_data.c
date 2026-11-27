@@ -57,7 +57,7 @@ AgeNode *current = head;
     if (current->next != NULL && current->next->age == age) {
         current->next->tab[ut][g]++;
     } else {
-        AgeNode *new_age = create_age(age);
+        AgeNode *new_age = createAge(age);
         new_age->tab[ut][g]++;
         new_age->next = current->next;
         current->next = new_age;
