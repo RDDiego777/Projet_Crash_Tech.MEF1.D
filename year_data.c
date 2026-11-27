@@ -43,6 +43,8 @@ void display_year_stats(int year, const YearStats *stats) {
 void run_year_data(FILE *file){
 
     Row row;
+    int last_year=-1;
+    int last_collision_id=-1;
 
   YearStats years[NB_YEARS];
   for(int i=0; i<NB_YEARS; i++){
@@ -55,6 +57,7 @@ void run_year_data(FILE *file){
     while(read_row(file, row)==1){
         if(row.year>=START_YEAR && row.year<=END_YEAR){
             add_victim(&years[row.year - START_YEAR], &row);
+            add_accident(&years[row.year - START_YEAR], &row, &last_year, &last_collision_id);
         }
     }
 int chosen_year = -1;
