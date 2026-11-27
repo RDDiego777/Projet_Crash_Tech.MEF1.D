@@ -127,7 +127,7 @@ void run_age_data(FILE *file){
 
 
 int choice = -1 ;
-char c ;
+
 while (choice!=0) {
 printf("\n--- Menu AGE_DATA ---\n");
         printf("1. Pyramide par genre (Hommes / Femmes)\n");
