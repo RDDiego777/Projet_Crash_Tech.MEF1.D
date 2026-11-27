@@ -33,14 +33,14 @@ if (row->user_type >= 1 && row->user_type <= 3) {
     }
 
 if (head == NULL || age < head->age) {
-        AgeNode *new = create_age(age);
-        new->tab[u][g]++;
+        AgeNode *new = createAge(age);
+        new->tab[ut][g]++;
         new->next = head;
         return new;
     }
 
 if (head->age == age) {
-        head->tab[u][g]++;
+        head->tab[ut][g]++;
         return head;
    }
 
