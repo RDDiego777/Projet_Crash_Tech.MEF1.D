@@ -11,7 +11,7 @@ new->age =a ge ;
 new->next = NULL ;
  for (int i= 0; i <4 ; i++) {
    for (int j=0 ; j < 3; j++) {
-     new->counts[i][j]=0 ;
+     new->tab[i][j]=0 ;
    }
  }
 return new ;
