@@ -124,7 +124,7 @@ void run_age_data(FILE *file){
   while (read_row(file, &row) == 1){
     head = insertAge(head, &row);
   }
-}
+
 
 int choice = -1 ;
 char c ;
