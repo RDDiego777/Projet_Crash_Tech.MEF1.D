@@ -20,11 +20,8 @@ int main(){
 
     fgets(header, 200, file);
 
-    while (read_row(file, &row) == 1) {
-        nb_rows++;
-    }
-
-    printf("Nombre de lignes = %d\n", nb_rows);
+    run_year_data(file);
+    
     fclose(file);
     return 0;
 }
