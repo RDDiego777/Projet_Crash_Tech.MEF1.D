@@ -86,7 +86,7 @@ return sum ;
 
 
 
-void Pyramid(AgeNode *head, int filter_type, int filter_gender){
+void pyramid(AgeNode *head, int filter_type, int filter_gender){
   int sum=0;
   AgeNode* current=head;
   while(current!=NULL){
