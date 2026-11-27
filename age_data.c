@@ -17,6 +17,8 @@ new->next = NULL ;
 return new ;
 }
 
+
+
 AgeNode *insertAge(AgeNode *head, const Row *row) {
   if (row->birth_year <=0) {
     return head ;
@@ -66,6 +68,8 @@ AgeNode *current = head;
     return head;
 }
 
+
+
 int get_age_count(const AgeNode *node,int filter_type, int filter_gender) {
     int sum = 0 ;
     for (int ut= 0 ; ut < 4 ; ut++) {
@@ -79,6 +83,40 @@ int get_age_count(const AgeNode *node,int filter_type, int filter_gender) {
     }
 return sum ;
 }
+
+
+
+void Pyramid(AgeNode *head, int filter_type, int filter_gender){
+  int sum=0;
+  AgeNode* current=head;
+  while(current!=NULL){
+    sum=sum+get_age_count(current, type, gender);
+    current=current->next;
+  }
+  if(sum==0){
+    printf("Aucune victime pour ce filtre ! \n");
+    return;
+  }
+
+    float percent;
+    int count;
+
+    current = head;
+    while (current != NULL) {
+        count = get_age_count(current, type, gender);
+        percent = count * 100.0 / sum;
+
+        printf("%d ans | ", current->age);
+        for (int k = 0; k < (int)(percent * 10); k++) {
+            printf("#");
+        }
+        printf(" %f\n", percent);
+
+        current = current->next;
+    }
+}
+
+
 
 void run_age_data(FILE *file){
   AgeNode *head = NULL;
