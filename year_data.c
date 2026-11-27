@@ -23,6 +23,7 @@ void add_accident(YearStats *stats, const Row *row, int *last_year, int *last_co
     stats->total_accidents++;
         *last_year = row->year ;
         *last_collision_id = row->collision_id ;
+    }
 }
 
 void display_year_stats(int year, const YearStats *stats) {
