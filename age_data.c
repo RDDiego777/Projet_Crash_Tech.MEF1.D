@@ -175,8 +175,7 @@ printf("\n--- Menu AGE_DATA ---\n");
 }
 
 
-int readInt(int min, int max)
-{
+int readInt(int min, int max){
     int value;
     int ok;
     int c;
