@@ -18,6 +18,13 @@ void add_victim(YearStats *stats, const Row *row) { // constante (lecture seule 
     }
 }
 
+void add_accident(YearStats *stats, const Row *row, int *last_year, int *last_collision_id) {
+    if (row->year != *last_year || row->collision_id != *last_collision_id) {
+    stats->total_accidents++;
+        *last_year = row->year ;
+        *last_collision_id = row->collision_id ;
+}
+
 void display_year_stats(int year, const YearStats *stats) {
     int total_victims = stats->unharmed + stats->killed + stats->serious_injuries + stats->light_injuries;
     
