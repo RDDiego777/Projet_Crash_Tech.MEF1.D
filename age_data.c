@@ -17,6 +17,50 @@ new->next = NULL ;
 return new ;
 }
 
+AgeNode *insertAge(AgeNode *head, const Row *row) {
+  if (row_birth->year <=0) {
+    return head ;
+  }
+
+int ut = 0 ;
+if (row->user_type >= 1 && row->user_type <= 3) {
+        ut = row->user_type;
+    }
+
+    int g = 0;
+    if (row->gender == 1 || row->gender == 2) {
+        g = row->gender;
+    }
+
+if (head == NULL || age < head->age) {
+        AgeNode *new = create_age(age);
+        new->tab[u][g]++;
+        new->next = head;
+        return new;
+    }
+
+if (head->age == age) {
+        head->tab[u][g]++;
+        return head;
+   }
+
+AgeNode *curr = head;
+    while (curr->next != NULL && curr->next->age < age) {
+        curr = curr->next;
+    }
+
+    if (curr->next != NULL && curr->next->age == age) {
+        curr->next->tab[ut][g]++;
+    } else {
+        AgeNode *new_age = create_age(age);
+        new_age->tab[ut][g]++;
+        new_age->next = curr->next;
+        curr->next = new_age;
+    }
+
+    return head;
+}
+
 
 AgeNode *findAge(AgeNode *head, int age){
   if(head==NULL){
