@@ -136,15 +136,8 @@ printf("\n--- Menu AGE_DATA ---\n");
         printf("Votre choix : ");
   
       choice = readInt(0, 2);
-      if (scanf("%d", &choice) != 1) {
-            printf("Erreur : veuillez entrer un nombre valide.\n");
-            c = getchar();
-            while (c != '\n' && c != EOF) {
-                c = getchar();
-            }
-            choice = -1;
-        }
-     else if (choice==0) {
+      
+     if (choice==0) {
       printf("Fin du mode AGE_DATA.\n") ;
     }
     else if (choice==1 || choice==2) {
@@ -154,23 +147,9 @@ printf("\n--- Menu AGE_DATA ---\n");
       
             filter_type = readInt(0, 3);
 
-            if (scanf("%d", &filter_type) != 1 || filter_type < 0 || filter_type > 3) {
-                filter_type = 0;
-                c = getchar();
-                while (c != '\n' && c != EOF) {
-                    c = getchar();
-                }
-            }
-
       printf("Filtrer par genre ? (0 = Tous, 1 = Homme, 2 = Femme) : ");
             filter_gender = readInt(0, 2);
-            if (scanf("%d", &filter_gender) != 1 || filter_gender < 0 || filter_gender > 2) {
-                filter_gender = 0;
-                c = getchar();
-                while (c != '\n' && c != EOF) {
-                    c = getchar();
-                }
-            }
+           
      pyramid(head, filter_type, filter_gender);
     }
         else {
