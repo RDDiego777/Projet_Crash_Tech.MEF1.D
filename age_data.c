@@ -18,7 +18,7 @@ return new ;
 }
 
 AgeNode *insertAge(AgeNode *head, const Row *row) {
-  if (row_birth->year <=0) {
+  if (row->birth_year <=0) {
     return head ;
   }
 
