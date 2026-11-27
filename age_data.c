@@ -75,7 +75,7 @@ int get_age_count(const AgeNode *node,int filter_type, int filter_gender) {
     for (int ut= 0 ; ut < 4 ; ut++) {
      for (int g=0 ; g<3 ; g++) {
       if (filter_type==0 || filter_type == ut) { // 0 = not filter
-       if (filter_gender==0 || filter_gender = ut) {
+       if (filter_gender==0 || filter_gender ==g) {
         sum+= node->tab[ut][g] ;
        }
       }
