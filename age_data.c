@@ -66,6 +66,20 @@ AgeNode *current = head;
     return head;
 }
 
+int get_age_count(const AgeNode *node,int filter_type, int filter_gender) {
+    int sum = 0 ;
+    for (int ut= 0 ; ut < 4 ; ut++) {
+     for (int g=0 ; g<3 ; g++) {
+      if (filter_type==0 || filter_type == ut) { // 0 = not filter
+       if (filter_gender==0 || filter_gender = ut) {
+        sum+= node->tab[ut][g] ;
+       }
+      }
+     }
+    }
+return sum ;
+}
+
 void run_age_data(FILE *file){
   AgeNode *head = NULL;
   Row row;
