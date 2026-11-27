@@ -156,6 +156,7 @@ printf("\n--- Menu AGE_DATA ---\n");
             printf("Choix invalide.\n");
         }
   }
+  freeList(head);
 }
 
 
