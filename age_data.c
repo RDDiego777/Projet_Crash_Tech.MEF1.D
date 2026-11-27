@@ -66,3 +66,12 @@ AgeNode *current = head;
     return head;
 }
 
+void run_age_data(FILE *file){
+  AgeNode *head = NULL;
+  Row row;
+  while (read_row(file, &row) == 1){
+    head = insertAge(head, &row);
+  }
+}
+    
+
