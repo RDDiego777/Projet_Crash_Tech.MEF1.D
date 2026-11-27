@@ -22,6 +22,11 @@ AgeNode *insertAge(AgeNode *head, const Row *row) {
     return head ;
   }
 
+  int age = row->year - row->birth_year;
+    if (age < 0 || age > 120) {
+        return head;
+    }
+
 int ut = 0 ;
 if (row->user_type >= 1 && row->user_type <= 3) {
         ut = row->user_type;
