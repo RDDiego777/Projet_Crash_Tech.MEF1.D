@@ -20,6 +20,7 @@ typedef struct {
 
 
 void add_victim(YearStats *stats, const Row *row);
+void add_accident(YearStats *stats, const Row *row, int *last_year, int *last_collision_id)
 void display_year_stats(int year, const YearStats *stats);
 void run_year_data(FILE *file);
 
