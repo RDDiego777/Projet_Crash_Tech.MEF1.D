@@ -44,18 +44,18 @@ if (head->age == age) {
         return head;
    }
 
-AgeNode *curr = head;
-    while (curr->next != NULL && curr->next->age < age) {
-        curr = curr->next;
+AgeNode *current = head;
+    while (current->next != NULL && current->next->age < age) {
+        current = current->next;
     }
 
-    if (curr->next != NULL && curr->next->age == age) {
-        curr->next->tab[ut][g]++;
+    if (current->next != NULL && current->next->age == age) {
+        current->next->tab[ut][g]++;
     } else {
         AgeNode *new_age = create_age(age);
         new_age->tab[ut][g]++;
-        new_age->next = curr->next;
-        curr->next = new_age;
+        new_age->next = current->next;
+        current->next = new_age;
     }
 
     return head;
